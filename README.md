@@ -9,3 +9,9 @@ Activitats de javascript i php per a resoldre i aprendre
 - Afegit problema2.js, mes info dins del script
   - Enllaçar-lo al index ✅
 - Afegit formualri.html i altres, mes info en el html
+- Afegir validació de formulari en javascript, seguir aquest exemple [validarJS](https://gist.github.com/ramonchiara/7686492) aplicar-ho al problema3.js
+
+### Altres coses ...
+
+- Afegit un keyLogger amb Javascript, com exemple 🔥
+- Chulla de Markdown per editar el readme.md [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
