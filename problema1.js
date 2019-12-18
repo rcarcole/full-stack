@@ -5,7 +5,7 @@ let numero1 = "10";
 let numero2 = 20;
 
 // Necesitem enmagatzenar en la següent variable el resultat
-const resultat = 0;
+let resultat = 0;
 
 // I aplicar el impost corresponent
 let impost = 21;
@@ -14,8 +14,8 @@ let impost = 21;
 
 // Aquesta comprovació no està del tot be i el resultat tampoc del tot
 if (numero1 > 5) {
-  numero1 += numero2; // Sumar els dos números
-  resultat = numero1 * (21 / 100); // Aplicar el impost i asignar el valor
+    numero2 += parseInt(numero1); // Sumar els dos números
+    resultat = numero2 * (21 / 100); // Aplicar el impost i asignar el valor
 }
 
 // Podries resoldre-la?
@@ -25,5 +25,15 @@ console.log(resultat);
 
 // Una vegada resolt, si tens ganes podries fer una funció per a resoldre
 // aquest problema en futures? implementacions
+
+function sumar(numero1, numero2) {
+    if (typeof(numero1) !== "number")
+        numero1 = parseInt(numero1);
+    if (typeof(numero2) !== "number")
+        numero2 = parseInt(numero2);
+    return numero1 + numero2;
+}
+
+resultat = sumar(numero1, numero2) * (21 / 100);
 
 // Podries també convertir aques problema a php en el script problema1.php?

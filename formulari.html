@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-  </head>
-  <body>
+    <title>Alta Usuaris</title>
+</head>
+
+<body>
     <!--
         Crear un formulari per a donar d'alta persones en la aplicació
         d'aquestes persones necesitem saber, nom, cognom, email, edad
         es deu enviar al script de php, altaPersones.php, per post
         i es deu implementar el que es comenta en aquest script.
     -->
-  </body>
+
+    <form action="altaPersones.php" method="POST">
+        Nom:<input type="text" name="nom"></br>
+        Cognom:<input type="text" name="cognom"></br>
+        E-mail:<input type="text" name="email"></br>
+        Edat:<input type="text" name="edat"></br>
+        <input type="submit" name="enviar" value="Enviar">
+
+    </form>
+
+
+
+</body>
+
 </html>
