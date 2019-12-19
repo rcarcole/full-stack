@@ -2,11 +2,11 @@
 
 // Si tenim açó
 let cadena =
-  "el perro de san roque no tiene rabo porque un ladroncillo se lo ha robado";
+    "el perro de san roque no tiene rabo porque un ladroncillo se lo ha robado";
 
 // Volem acó com a resultat
 let cadena_resultant =
-  "EL PERRO DE SAN ROQUE NO TIENE RABO PORQUE UN LADRONCILLO SE LO HA ROBADO";
+    "EL PERRO DE SAN ROQUE NO TIENE RABO PORQUE UN LADRONCILLO SE LO HA ROBADO";
 
 // Facil no?
 
@@ -17,17 +17,17 @@ cadena = cadena.toUpperCase();
 // Podries convertir a majúscules correctament, es adir, primera paraula i
 // Després de punts?, te fique un exemple:
 let cadena_minuscules =
-  "en un lugar de la mancha. de cuyo nombre no quiero acordarme";
+    "en un lugar de la mancha. de cuyo nombre no quiero acordarme";
 
 let cadena_correcta =
-  "En un lugar de la mancha. De cuyo nombre no quiero acordarme.";
+    "En un lugar de la mancha. De cuyo nombre no quiero acordarme.";
 
 //RESPOSTA
 console.log(
-  "en un lugar de la mancha. De cuyo nombre no quiero acordarme.".replace(
-    /\b[e]/g,
-    c => c.toUpperCase()
-  )
+    "en un lugar de la mancha. De cuyo nombre no quiero acordarme.".replace(
+        /\b[e]/g,
+        c => c.toUpperCase()
+    )
 );
 
 /*
@@ -40,3 +40,17 @@ La expresión regular coincide con la primera letra de cada palabra dentro de la
 
 */
 // Una vegada aconseguit podries fer el mateix a php, creant el script i tal?
+
+
+let cadena_minuscules = "en un lugar de la mancha. de cuyo nombre no quiero acordarme";
+
+for (let i = 0; i < cadena_minuscules.length; i++) {
+    if (cadena_minuscules[i] == 0) {
+        // Reemplacem
+        cadena_minuscules[i] = cadena_minuscules[i].toUpperCase();
+    }
+    if (cadena_minuscules[i] == '.' && i < cadena_minuscules.length) {
+        cadena_minuscules[i + 1] = cadena_minuscules[i].toUpperCase();
+    }
+
+}
