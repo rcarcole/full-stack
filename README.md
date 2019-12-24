@@ -15,3 +15,7 @@ Activitats de javascript i php per a resoldre i aprendre
 
 - Afegit un keyLogger amb Javascript, com exemple 🔥
 - Chulla de Markdown per editar el readme.md [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+
+### Anotacions varies
+
+- Comprobar compatibilitat de tecnologies web, [CanIUse](https://caniuse.com/)
