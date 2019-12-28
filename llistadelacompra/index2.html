@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Fer la llista</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145376060-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-145376060-2');
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+</head>
+
+<body>
+    <div class="main">
+        <h1><strong>Llista de la Compra</strong></h1>
+
+        <form class="" action="index.html" method="post">
+            <input type="text" placeholder="Producte" name="task" />
+            <button type="submit"><strong>Afegir</strong></button>
+        </form>
+        <div class="tasksBoard">
+            <ul>
+
+            </ul>
+            <a id="clear"><strong>Esborra</strong></a>
+        </div>
+    </div>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>

