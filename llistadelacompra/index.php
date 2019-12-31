@@ -17,7 +17,7 @@
         gtag('js', new Date());
         gtag('config', 'UA-145376060-2');
     </script>
-
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
 
 <body>

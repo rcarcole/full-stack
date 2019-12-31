@@ -94,3 +94,13 @@ a {
         width: 10%;
     }
 }
+
+.completed {
+    text-decoration: line-through;
+    color: #ff0000;
+}
+
+.uncompleted {
+    text-decoration: none;
+    color: #2f4f4f;
+}
