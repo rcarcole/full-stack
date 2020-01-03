@@ -17,26 +17,22 @@
         gtag('js', new Date());
         gtag('config', 'UA-145376060-2');
     </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
 
 <body>
-    <div class="main">
-        <h1><strong>Llista de la Compra</strong></h1>
 
-        <form class="" action="index.html" method="post">
-            <input type="text" placeholder="Producte" name="task" />
-            <button type="submit"><strong>Afegir</strong></button>
-        </form>
-        <div class="tasksBoard">
-            <ul>
+    <?php
+    session_start();
+    if(isset($_SESSION["login"])){
+        require_once "llista.php";
+        echo '<script type="text/javascript" src="app.js"></script>';
+    }
+    else{
+        require_once "log-in.php";
+    }
+    ?>
 
-            </ul>
-            <a id="clear"><strong>Esborra</strong></a>
-        </div>
-    </div>
-    <script type="text/javascript" src="app.js"></script>
 </body>
 
 </html>

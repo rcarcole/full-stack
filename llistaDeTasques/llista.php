@@ -9,7 +9,7 @@ session_start();
         
 require_once "database.php";
 
-$sql="SELECT * FROM llista";
+$sql="SELECT * FROM tasques";
 $tmp=$gbd->query($sql,PDO::FETCH_ASSOC);
 $result=$tmp->fetchAll();
 
@@ -28,12 +28,12 @@ $result=$tmp->fetchAll();
             <ul>
                 <?php
                 $li="";
-                foreach($result as $producte){
+                foreach($result as $tasca){
                     $li.='<li><input type="checkbox"><label '; //$li=$li.'<li><input type="checkbox"><label ';
-                    if($producte["estat"]=='1'){
+                    if($tasca["estat"]=='1'){
                         $li.='class="completed"';
                     }
-                    $li.='>'.$producte['productes'].'</label><span class="delete">×</span></li>';
+                    $li.='>'.$tasca['tasca'].'</label><span class="delete">×</span></li>';
                     echo $li;
                     $li="";
                 }
