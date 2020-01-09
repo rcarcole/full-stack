@@ -37,7 +37,7 @@ input[type="text"] {
 }
 
 button {
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: #53bdff;
     background-color: #fff;
     outline: 0;
@@ -70,7 +70,7 @@ li {
 a {
     float: right;
     text-align: right;
-    color: #ff0000;
+    color: #ff0000 !important;
     font-size: 1.2em;
     cursor: pointer;
 }
@@ -103,4 +103,15 @@ a {
 .uncompleted {
     text-decoration: none;
     color: #2f4f4f;
+}
+
+.jumbotron {
+    background-image: url(https://image.freepik.com/vector-gratis/mujeres-ninos-haciendo-tareas-domesticas_52683-24251.jpg);
+    background-size: cover;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid black;
+    float: inherit;
+    width: 1000px;
+    margin-left: 470px;
 }

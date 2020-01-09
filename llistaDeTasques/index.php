@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Fer la llista</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -20,8 +21,9 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
 
-<body>
-
+<body class="text-center">>
+<div class="jumbotron"> <!--style="background:red"-->
+    <div class="container">
     <?php
     session_start();
     if(isset($_SESSION["login"])){
@@ -32,7 +34,8 @@
         require_once "log-in.php";
     }
     ?>
-
+    </div>
+</div>
 </body>
 
 </html>

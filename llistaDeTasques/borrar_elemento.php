@@ -18,13 +18,13 @@ $prod=cadascún dels productes de la BBDD
 
 */
 
-if(isset($_POST["tasca"])){
+if(isset($_POST["nom"])){
 
-        var_dump($_POST["tasca"]);
-        $sql="DELETE FROM tasques WHERE tasca='".$_POST["tasca"]."';";
+        var_dump($_POST["nom"]);
+        $sql="DELETE FROM tasques WHERE nom='".$_POST["nom"]."';";
         $consulta=$gbd->prepare($sql);
         if ($consulta->execute()){
-            echo "Tasca eliminat correctament";
+            echo "Tasca eliminada correctament";
     }
     else{
             echo "Error al eliminar el tasca";

@@ -17,7 +17,7 @@ html {
 
 h1 {
     text-align: center;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 form {
@@ -37,7 +37,7 @@ input[type="text"] {
 }
 
 button {
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: #53bdff;
     background-color: #fff;
     outline: 0;
@@ -70,7 +70,7 @@ li {
 a {
     float: right;
     text-align: right;
-    color: #ff0000;
+    color: #ff0000 !important;
     font-size: 1.2em;
     cursor: pointer;
 }
@@ -97,10 +97,21 @@ a {
 
 .completed {
     text-decoration: line-through;
-    color: #ff0000;
+    color: #3cff00;
 }
 
 .uncompleted {
     text-decoration: none;
     color: #2f4f4f;
+}
+
+.jumbotron {
+    background-image: url(http://blog.global-exchange.com/wp-content/uploads/2018/12/Mercados-Quito4-840.jpg);
+    background-size: cover;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid black;
+    float: inherit;
+    width: 1000px;
+    margin-left: 470px;
 }

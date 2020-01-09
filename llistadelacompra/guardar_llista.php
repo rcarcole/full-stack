@@ -25,17 +25,17 @@ if(isset($_POST["productes"])){
         foreach($_POST["productes"] as $producte){
                 $existeix=false;
                 foreach($result as $prod){
-                        if($producte['producte']==$prod['productes']){
+                        if($producte['nom']==$prod['nom']){
                                 $existeix=true;
                         }
 
                     }
 if($existeix){
-        $sql="UPDATE llista SET estat='".$producte["estat"]."' WHERE productes='".$producte["producte"]."';";
+        $sql="UPDATE llista SET estat='".$producte["estat"]."' WHERE nom='".$producte["nom"]."';";
         $consulta=$gbd->prepare($sql);
 }
 else{
-        $sql="INSERT INTO llista (productes, estat) VALUES ('".$producte["producte"]."','".$producte["estat"]."');";
+        $sql="INSERT INTO llista (nom, estat) VALUES ('".$producte["nom"]."','".$producte["estat"]."');";
         $consulta=$gbd->prepare($sql);
 }
 

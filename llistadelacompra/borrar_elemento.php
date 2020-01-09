@@ -18,10 +18,10 @@ $prod=cadascún dels productes de la BBDD
 
 */
 
-if(isset($_POST["producte"])){
+if(isset($_POST["nom"])){
 
-        var_dump($_POST["producte"]);
-        $sql="DELETE FROM llista WHERE productes='".$_POST["producte"]."';";
+        var_dump($_POST["nom"]);
+        $sql="DELETE FROM llista WHERE nom='".$_POST["nom"]."';";
         $consulta=$gbd->prepare($sql);
         if ($consulta->execute()){
             echo "Producte eliminat correctament";

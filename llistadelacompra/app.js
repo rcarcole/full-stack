@@ -10,6 +10,8 @@ function loadEvents() {
     document.querySelector("ul").addEventListener("click", deleteOrTick);
     // 
     document.getElementById("guardar").addEventListener("click", saveList);
+
+    setInterval(obtenirLlista, 5000);
 }
 
 // submit data function
@@ -54,7 +56,7 @@ function deleteTask(e) {
         $.ajax({
                 type: "POST",
                 url: "borrar_elemento.php",
-                data: { producte: e.target.parentNode.querySelector("label").innerText }
+                data: { nom: e.target.parentNode.querySelector("label").innerText }
             })
             .done(function(msg) {
                 console.log("Data Saved: " + msg);
@@ -84,7 +86,7 @@ function saveList(event) {
             estat = 0;
         }
         productes.push({
-            producte: li.querySelector("label").innerText,
+            nom: li.querySelector("label").innerText,
             estat: estat
         });
     });
@@ -96,5 +98,44 @@ function saveList(event) {
         })
         .done(function(msg) {
             console.log("Data Saved: " + msg);
+        });
+}
+
+function obtenirLlista() {
+    $.ajax({
+            type: "POST",
+            url: "obtenirLlista.php",
+            data: { obtenirLlista: true }
+        })
+        //msg és la resposta del servidor
+        .done(function(msg) {
+            let productesServidor = JSON.parse(msg);
+            const lis = document.querySelectorAll("li");
+            let productes = [];
+            lis.forEach((li) => {
+                let estat;
+                if (li.querySelector("label").className == "completed") {
+                    estat = 1;
+                } else {
+                    estat = 0;
+                }
+                productes.push({
+                    nom: li.querySelector("label").innerText,
+                    estat: estat
+                });
+            });
+            productesServidor.forEach((producte) => {
+                    let existe = false;
+                    for (prod of productes) {
+                        if (prod.nom == producte.nom) {
+                            existe = true;
+                        }
+
+                    }
+                    if (existe === false) {
+                        addTask(producte.nom);
+                    }
+                })
+                // console.log(productes);
         });
 }

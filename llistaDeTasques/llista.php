@@ -18,10 +18,10 @@ $result=$tmp->fetchAll();
 
 
 <div class="main">
-        <h1><strong>Llista de la Compra</strong></h1>
+        <h1><strong>Llista de Tasques</strong></h1>
 
         <form class="" action="index.html" method="post">
-            <input type="text" placeholder="Producte" name="task" />
+            <input type="text" placeholder="Tasca a fer" name="task" />
             <button type="submit"><strong>Afegir</strong></button>
         </form>
         <div class="tasksBoard">
@@ -33,7 +33,7 @@ $result=$tmp->fetchAll();
                     if($tasca["estat"]=='1'){
                         $li.='class="completed"';
                     }
-                    $li.='>'.$tasca['tasca'].'</label><span class="delete">×</span></li>';
+                    $li.='>'.$tasca['nom'].'</label><span class="delete">×</span></li>';
                     echo $li;
                     $li="";
                 }

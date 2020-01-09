@@ -33,7 +33,7 @@ $result=$tmp->fetchAll();
                     if($producte["estat"]=='1'){
                         $li.='class="completed"';
                     }
-                    $li.='>'.$producte['productes'].'</label><span class="delete">×</span></li>';
+                    $li.='>'.$producte['nom'].'</label><span class="delete">×</span></li>';
                     echo $li;
                     $li="";
                 }

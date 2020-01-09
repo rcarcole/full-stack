@@ -24,17 +24,17 @@ if(isset($_POST["tasques"])){
         foreach($_POST["tasques"] as $tasca){
                 $existeix=false;
                 foreach($result as $prod){
-                        if($tasca['tasca']==$prod['tasca']){
+                        if($tasca['nom']==$prod['nom']){
                                 $existeix=true;
                         }
 
                     }
 if($existeix){
-        $sql="UPDATE tasques SET estat='".$tasca["estat"]."' WHERE tasca='".$tasca["tasca"]."';";
+        $sql="UPDATE tasques SET estat='".$tasca["estat"]."' WHERE nom='".$tasca["nom"]."';";
         $consulta=$gbd->prepare($sql);
 }
 else{
-        $sql="INSERT INTO tasques (tasca, estat) VALUES ('".$tasca["tasca"]."','".$tasca["estat"]."');";
+        $sql="INSERT INTO tasques (nom, estat) VALUES ('".$tasca["nom"]."','".$tasca["estat"]."');";
         $consulta=$gbd->prepare($sql);
 }
 
