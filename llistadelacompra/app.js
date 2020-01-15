@@ -26,9 +26,19 @@ function submit(event) {
 function addTask(task) {
     let ul = document.querySelector("ul");
     let li = document.createElement("li");
-    li.innerHTML = `<input type="checkbox"><label>${task}</label><span class="delete">×</span>`;
-    ul.appendChild(li);
-    document.querySelector(".tasksBoard").style.display = "block";
+    const lis = document.querySelectorAll("li");
+    let existe = false;
+    lis.forEach((li) => {
+        if (li.querySelector("label").innerText == task) {
+            existe = true;
+            alert("El element ja existeix.");
+        }
+    });
+    if (existe == false) {
+        li.innerHTML = `<input type="checkbox"><label>${task}</label><span class="delete">×</span>`;
+        ul.appendChild(li);
+        document.querySelector(".tasksBoard").style.display = "block";
+    }
 }
 
 function clearList(e) {

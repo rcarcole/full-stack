@@ -12,7 +12,7 @@
 </head>
 
 <body>
-<form class="dropdown-menu p-4" action="login.php" method="POST">
+<form class="" action="login.php" method="POST">
   <div class="form-group">
     <label for="exampleDropdownFormEmail2">Correu</label>
     <input type="email" class="form-control" id="exampleDropdownFormEmail2" name="correu" placeholder="correu@exemple.com">
