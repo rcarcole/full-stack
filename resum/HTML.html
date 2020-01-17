@@ -98,6 +98,78 @@
     donde 'archivo.js' es el nombre del archivo que queremos enlazar en nuestro documento html.  -->
     <script src="archivo.js"></script>
 
+
+    <!-- Donde el atributosrc="" es la ruta relativa a la imagen. 
+    Con el atributo "alt=""" lo que hacemos es poner un texto alternativo por si la imagen no carga, también se usa para mejorar el SEO.-->
+    <hr/>
+    <h2>Imagenes en HTML</h2>
+    <img src="../imagenes/hola_mundo.jpeg" alt="Imagen de 'hola mundo'" width="455px" />
+    <hr/>
+
+
+    <hr/>
+    <h3>Tablas</h3>
+    <!-- Con el atributo "border" pintará el borde de la tabla.-->
+    <table border="1">
+        <!--<tr> son las filas-->
+        <tr>
+            <!--<th> son las columnas escritas en negrita-->
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Comunidad autónoma</th>
+        </tr>
+        <tr>
+            <!--<td> son las columnas-->
+            <td>Robert</td>
+            <td>Carcolé</td>
+            <td>Cataluña</td>
+        </tr>
+        <tr>
+            <td>David</td>
+            <td>Torres</td>
+            <td>Valencia</td>
+        </tr>
+        <tr>
+            <td>intruso</td>
+            <!--con el atributo "colspan="x"" se usa para expandir la columna tantas columnas como "x" diga.-->
+            <td colspan="2">sin localizar</td>
+        </tr>
+        <hr/>
+    </table>
+
+
+    <h3>Formularios</h3>
+    <!--El atributo "action" sirve para indicar donde va a ir la información del formulario.
+    El atributo method indica qué metodo utilizar: POST, GET, etc..-->
+    <form action="" method="">
+        <p>
+            <!-- con el "for=""" indicamos a que campo corresponde este nombre del input-->
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" placeholder="Escribe tu nombre">
+        </p>
+        <p>
+            <!--textarea es un campo de tipo descripción-->
+            <label for="descripcion">Descripción</label>
+            <textarea name="descripcion"></textarea>
+        </p>
+
+        <!-- radiobutons, elige uno de los elementos de tipo "radio"-->
+        <input type="radio" name="genero" value="hombre">Hombre<br/>
+        <input type="radio" name="genero" value="mujer">Mujer<br/>
+        <input type="radio" name="genero" value="nada">Nada<br/>
+
+        <!-- con select -> option podemos elegir entre varias opciones en un desplegable -->
+        <select>
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+            <option value="nada">Nada</option>
+        </select>
+        <br/>
+        <!-- Pintar un botón para enviar el formulario con "submit"-->
+        <input type="submit" value="Enviar formulario">
+
+    </form>
+
 </body>
 
 </html>
