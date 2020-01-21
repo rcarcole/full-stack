@@ -1,5 +1,7 @@
 // https://blog.usejournal.com/develop-a-to-do-list-app-in-vanilla-javascript-95377ec370c5
 
+var interval;
+
 loadEvents();
 // load every event in the page
 function loadEvents() {
@@ -11,7 +13,7 @@ function loadEvents() {
     // 
     document.getElementById("guardar").addEventListener("click", saveList);
 
-    setInterval(obtenirLlista, 5000);
+    interval = setInterval(obtenirLlista, 5000);
 }
 
 // submit data function
@@ -23,7 +25,7 @@ function submit(event) {
 }
 
 // add tasks
-function addTask(task) {
+function addTask(task, completat = false) {
     let ul = document.querySelector("ul");
     let li = document.createElement("li");
     const lis = document.querySelectorAll("li");
@@ -34,8 +36,13 @@ function addTask(task) {
             alert("El element ja existeix.");
         }
     });
-    if (existe == false) {
+    if (existe == false && completat == false) {
         li.innerHTML = `<input type="checkbox"><label>${task}</label><span class="delete">×</span>`;
+        ul.appendChild(li);
+        document.querySelector(".tasksBoard").style.display = "block";
+    }
+    if (completat == true) {
+        li.innerHTML = `<input type="checkbox"><label class="completed">${task}</label><span class="delete">×</span>`;
         ul.appendChild(li);
         document.querySelector(".tasksBoard").style.display = "block";
     }
@@ -43,6 +50,15 @@ function addTask(task) {
 
 function clearList(e) {
     // setting the ul innerHML to an empty string
+    window.clearInterval(interval);
+    $.ajax({
+            type: "POST",
+            url: "esborrar_llista.php",
+            data: { borrar: true }
+        })
+        .done(function(msg) {
+            console.log("Llista esborrada correctament. " + msg);
+        });
     let ul = (document.querySelector("ul").innerHTML = "");
 }
 
@@ -120,7 +136,6 @@ function obtenirLlista() {
         //msg és la resposta del servidor
         .done(function(msg) {
             let tasquesServidor = JSON.parse(msg);
-            console.log(tasquesServidor);
             const lis = document.querySelectorAll("li");
             let productes = [];
             lis.forEach((li) => {
@@ -149,4 +164,38 @@ function obtenirLlista() {
                 })
                 // console.log(productes);
         });
+    ordenarLlista();
+}
+
+function ordenarLlista() {
+    const lis = document.querySelectorAll("li");
+    let productes = [];
+    lis.forEach((li) => {
+        let estat;
+        productes.push({
+            nom: li.querySelector("label").innerText,
+            /*
+            Seria un 
+            if (querySelector("label").className == "completed") {
+                estat = true;
+            }
+            else{
+                estat = false;
+            }
+            */
+            estat: li.querySelector("label").className == "completed" ? true : false
+        });
+    });
+
+    productes.sort(function(a, b) {
+        if (a.estat < b.estat) {
+            return -1;
+        } else {
+            return 1;
+        }
+    });
+    document.querySelector("ul").innerHTML = "";
+    productes.forEach((producte) => {
+        addTask(producte.nom, producte.estat);
+    });
 }
