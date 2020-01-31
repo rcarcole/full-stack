@@ -33,3 +33,30 @@ if (true) {
 console.log(numero); //valor 50
 
 //Prueba con let:
+var texto = "Curso JS Robert Carcole";
+console.log(texto); // valor "Curso JS Robert Carcole"
+
+if (true) {
+    let texto = "Otro curso¿?";
+    console.log(texto); // valor Otro curso¿?
+}
+
+console.log(texto); // valor "Curso JS Robert Carcole"
+
+/*
+    let actua a nivel de bloque, crea esta variable nueva con un nuevo valor solamente dentro del bloque "if"
+*/
+
+
+
+
+
+
+
+/*
+    DAVID
+*/
+/*  Evita el funcionament normal de algo. Quan s'envia un formulari lo normal es que es rcarregui la pagina i envii la informacio al servidor, 
+    amb el preventDefault controla que no s'envii perque vas a fer una altra cosa.
+*/
+event.preventDefault();
